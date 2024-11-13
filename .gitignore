@@ -99,6 +99,7 @@ run/unit-cell-creator
 # Vscode and Clang project files and folders
 #----------------------------------------------
 .vscode/
+.idea
 .cache/
 .clang-tidy
 

@@ -143,7 +143,7 @@ namespace anisotropy{
       		bool random_grain_anisotropy; // flag to control random anisotropy by grain
 
             // constructor
-            mp_t ( const unsigned int max_materials = 100 ):
+            mp_t ( const unsigned int max_materials = 666 ):
             	ku2( 0.0 ),       // set initial value of ku2 to zero
                k2r1( 0.0 ),      // set initial value of k2r1 to zero
                k2r1_odd( 0.0 ),  // set initial value of k2r1_odd to zero

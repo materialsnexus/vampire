@@ -76,7 +76,7 @@ namespace spin_transport{
             set_double_t stt_pj;           // spin transport precession torque
 
             // constructor
-            mp_t (const unsigned int max_materials = 100) {
+            mp_t (const unsigned int max_materials = 9999) {
                resistivity.set(1.68e-8); // default value is for copper (Cu)
                spin_resistivity.set(0.0); // default value is for copper (Cu)
                stt_rj.set(0.0); // default value is for copper (Cu)
