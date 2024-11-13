@@ -1695,7 +1695,7 @@ namespace vin{
             std::string test="num-materials";
             if(word==test){
                 unsigned int nm = atoi(value.c_str());
-                check_for_valid_int(nm, word, line, prefix, 1, 100,"material","1 - 100");
+                check_for_valid_int(nm, word, line, prefix, 1, 666,"material","1 - 666");
                 mp::num_materials=nm;
                 return EXIT_SUCCESS;
             }
