@@ -150,7 +150,7 @@ namespace exchange{
             std::vector<double> kitaev; // Dzyaloshinskii-Moriya interaction constant
 
             // constructor
-            mp_t (const unsigned int max_materials = 9999)
+            mp_t (const unsigned int max_materials = 666)
             {
                // resize arrays to correct size
                dmi.resize(max_materials, 0.0); // initialise pair anisotropy constants to zero
