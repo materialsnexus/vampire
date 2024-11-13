@@ -151,7 +151,7 @@ namespace exchange{
             std::vector<double> fs; //Four-spin interaction constant
 
             // constructor
-            mp_t (const unsigned int max_materials = 100)
+            mp_t (const unsigned int max_materials = 9999)
             {
                // resize arrays to correct size
                dmi.resize(max_materials, 0.0); // initialise pair anisotropy constants to zero
