@@ -63,7 +63,7 @@ void partial_hysteresis_loop(){
 
    // Setup min and max fields and increment (uT)
    int64_t iHmax=vmath::iround64(double(sim::Hmax)*1.0E6);
-   int64_t iHmin=vmath::iround64(double(sim::Hmin)*1.0E6);
+   int64_t iHmin=vmath::iround64(double(sim::Hmax)*-1.0E6);
    int64_t iHinc=vmath::iround64(double(sim::Hinc)*1.0E6);
 
    // Check for loop direction and adjust parameters
@@ -77,7 +77,7 @@ void partial_hysteresis_loop(){
    }
 
    // Perform Field Loop
-   for(int H=iHmin;H<=iHmax;H+=iHinc){
+   for(int H=iHmax;H>=iHmin;H-=iHinc){
 
       // Set applied field (Tesla)
       sim::H_applied=double(H)*parity*1.0e-6;
