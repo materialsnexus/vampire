@@ -27,11 +27,12 @@ interface.o \
 lagrange.o \
 LLB_Boltzmann.o \
 micromagnetic_A_calculation.o \
-partial_hysteresis.o \
+half_hysteresis.o \
 static_hysteresis.o \
 setting.o \
 time_series.o \
-temperature_pulse.o
+temperature_pulse.o \
+quarter_hysteresis.o
 
 # Append module objects to global tree
 OBJECTS+=$(addprefix obj/program/,$(program_objects))

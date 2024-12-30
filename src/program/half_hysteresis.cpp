@@ -23,12 +23,12 @@
 
 namespace program{
 
-/// @brief Function to calculate the partial hysteresis loop
+/// @brief Function to calculate a half hysteresis loop
 ///
 /// @callgraph
 /// @callergraph
 ///
-/// @details sim:program=partial-hysteresis-loop simulates a partial hysteresis loop, starting at
+/// @details sim:program=half-hysteresis-loop simulates a half hysteresis loop, starting at
 ///          sim:minimum-applied-field-strength to sim:maximum-applied-field-strength in steps of
 ///          sim:applied-field-strength-increment. Note that the sign of the increment is
 ///          significant, indicating the direction of the loop. Invalid combinations (which lead to
@@ -52,10 +52,10 @@ namespace program{
 ///	Revision:	  ---
 ///=====================================================================================
 ///
-void partial_hysteresis_loop(){
+void half_hysteresis_loop(){
 
    // check calling of routine if error checking is activated
-   if(err::check==true){std::cout << "program::partial-hysteresis has been called" << std::endl;}
+   if(err::check==true){std::cout << "program::half-hysteresis has been called" << std::endl;}
 
    // Equilibrate system in saturation field
    sim::H_applied=sim::Heq;
