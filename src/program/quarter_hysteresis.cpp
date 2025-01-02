@@ -57,21 +57,11 @@ void quarter_hysteresis_loop(){
    int64_t iHmin=vmath::iround64(double(0.0));
    int64_t iHinc=vmath::iround64(double(sim::Hinc)*1.0E6);
 
-   // Check for loop direction and adjust parameters
-   // so that field loop works in positive sense
-   double parity=1.0;
-   if(iHinc < 0){
-      iHmax=-iHmax;
-      iHmin=-iHmin;
-      iHinc=-iHinc;
-      parity=-1.0;
-   }
-
    // Perform Field Loop
-   for(int H=iHmax;H>=0.0;H-=iHinc){
+   for(int H=iHmax;H>=iHmin;H-=iHinc){
 
       // Set applied field (Tesla)
-      sim::H_applied=double(H)*parity*1.0e-6;
+      sim::H_applied=double(H)*1.0e-6;
 
       // Reset start time
       uint64_t start_time=sim::time;
