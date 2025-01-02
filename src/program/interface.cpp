@@ -100,7 +100,7 @@ namespace program{
             program::program=11;
             return true;
          }
-         test="partial-hysteresis-loop";
+         test="half-hysteresis-loop";
          if(value==test){
             program::program=12;
             return true;
@@ -165,6 +165,11 @@ namespace program{
             program::program=73;
             return true;
          }
+         test="quarter-hysteresis-loop";
+         if(value==test){
+            program::program=74;
+            return true;
+         }
          else{
             terminaltextcolor(RED);
             std::cout << word << '\t' << test << std::endl;
@@ -182,10 +187,11 @@ namespace program{
             std::cerr << "\t\"localised-temperature-pulse\"" << std::endl;
             std::cerr << "\t\"time-series\"" << std::endl;
             std::cerr << "\t\"hysteresis-loop\"" << std::endl;
-            std::cerr << "\t\"partial-hysteresis-loop\"" << std::endl;
+            std::cerr << "\t\"half-hysteresis-loop\"" << std::endl;
             std::cerr << "\t\"hybrid-cmc\"" << std::endl;
             std::cerr << "\t\"reverse-hybrid-cmc\"" << std::endl;
             std::cerr << "\t\"static-hysteresis-loop\"" << std::endl;
+            std::cerr << "\t\"quarter-hysteresis-loop\"" << std::endl;
             terminaltextcolor(WHITE);
             err::vexit();
          }

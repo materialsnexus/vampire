@@ -23,18 +23,11 @@
 
 namespace program{
 
-/// @brief Function to calculate the partial hysteresis loop
+/// @brief Function to calculate the quarter hysteresis loop
 ///
 /// @callgraph
 /// @callergraph
 ///
-/// @details sim:program=partial-hysteresis-loop simulates a partial hysteresis loop, starting at
-///          sim:minimum-applied-field-strength to sim:maximum-applied-field-strength in steps of
-///          sim:applied-field-strength-increment. Note that the sign of the increment is
-///          significant, indicating the direction of the loop. Invalid combinations (which lead to
-///          an infinite loop) are checked during the initialisation and will print out a warning.
-///          As with the full hysteresis loop, the minimum resolution of the applied field
-///          increment is 1 uT.
 ///
 /// @section License
 /// Use of this code, either in source or compiled form, is subject to license from the authors.
@@ -43,19 +36,17 @@ namespace program{
 /// @section Information
 /// @author  Richard Evans, richard.evans@york.ac.uk
 /// @version 1.0
-/// @date    02/12/20103
 ///
 /// @return EXIT_SUCCESS
 ///
 /// @internal
-///	Created:		02/12/2013
 ///	Revision:	  ---
 ///=====================================================================================
 ///
-void partial_hysteresis_loop(){
+void quarter_hysteresis_loop(){
 
    // check calling of routine if error checking is activated
-   if(err::check==true){std::cout << "program::partial-hysteresis has been called" << std::endl;}
+   if(err::check==true){std::cout << "program::quarter-hysteresis has been called" << std::endl;}
 
    // Equilibrate system in saturation field
    sim::H_applied=sim::Heq;
@@ -63,24 +54,14 @@ void partial_hysteresis_loop(){
 
    // Setup min and max fields and increment (uT)
    int64_t iHmax=vmath::iround64(double(sim::Hmax)*1.0E6);
-   int64_t iHmin=vmath::iround64(double(sim::Hmax)*-1.0E6);
+   int64_t iHmin=vmath::iround64(double(0.0));
    int64_t iHinc=vmath::iround64(double(sim::Hinc)*1.0E6);
-
-   // Check for loop direction and adjust parameters
-   // so that field loop works in positive sense
-   double parity=1.0;
-   if(iHinc < 0){
-      iHmax=-iHmax;
-      iHmin=-iHmin;
-      iHinc=-iHinc;
-      parity=-1.0;
-   }
 
    // Perform Field Loop
    for(int H=iHmax;H>=iHmin;H-=iHinc){
 
       // Set applied field (Tesla)
-      sim::H_applied=double(H)*parity*1.0e-6;
+      sim::H_applied=double(H)*1.0e-6;
 
       // Reset start time
       uint64_t start_time=sim::time;

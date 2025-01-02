@@ -426,10 +426,10 @@ int run(){
 
       case 12:
          if(vmpi::my_rank==0){
-            std::cout << "partial-hysteresis-loop..." << std::endl;
-            zlog << "partial-hysteresis-loop..." << std::endl;
+            std::cout << "half-hysteresis-loop..." << std::endl;
+            zlog << "half-hysteresis-loop..." << std::endl;
          }
-         program::partial_hysteresis_loop();
+         program::half_hysteresis_loop();
          break;
 
       case 13:
@@ -534,6 +534,15 @@ int run(){
 			}
 			program::boltzmann_dist_micromagnetic_llg();
 			break;
+		//------------------------------------------------------------------------
+		case 74:
+		 	if(vmpi::my_rank==0){
+				std::cout << "quarter-hysteresis-loop..." << std::endl;
+				zlog << "quarter-hysteresis-loop..." << std::endl;
+			}
+			program::quarter_hysteresis_loop();
+			break;
+		//------------------------------------------------------------------------
 		default:{
 			std::cerr << "Unknown Internal Program ID "<< program::program << " requested, exiting" << std::endl;
 			zlog << "Unknown Internal Program ID "<< program::program << " requested, exiting" << std::endl;
