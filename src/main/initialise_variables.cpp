@@ -47,7 +47,7 @@ namespace mp{
 	// Material Container
 	//----------------------------------
 
-	//const int max_materials=666;
+	//const int max_materials=2000;
 
 	int num_materials=1;
 

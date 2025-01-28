@@ -453,7 +453,7 @@ void create_internal(const std::string& file_header, const std::string& nn){
    ofile << "             //------------------------------" << std::endl;
    ofile << "             double test;\n" << std::endl;
    ofile << "             // constructor" << std::endl;
-   ofile << "             mp_t (const unsigned int max_materials = 666):" << std::endl;
+   ofile << "             mp_t (const unsigned int max_materials = 2000):" << std::endl;
    ofile << "                test(0.0) // constructor initialisation of test variable" << std::endl;
    ofile << "             {" << std::endl;
    ofile << "                // constructor body for initialising more complex data/arrays" << std::endl;

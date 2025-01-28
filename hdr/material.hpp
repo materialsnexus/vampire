@@ -70,7 +70,7 @@ namespace mp
 	// Material Container
 	//----------------------------------
 
-	const int max_materials=666;
+	const int max_materials=2000;
 	extern int num_materials;
 
 	class materials_t {
