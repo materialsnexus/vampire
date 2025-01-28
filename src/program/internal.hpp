@@ -51,7 +51,7 @@ namespace program{
              double test;
 
              // constructor
-             mp_t (const unsigned int max_materials = 666):
+             mp_t (const unsigned int max_materials = 2000):
                 test(0.0) // constructor initialisation of test variable
              {
                 // constructor body for initialising more complex data/arrays

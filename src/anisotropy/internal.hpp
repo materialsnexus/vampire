@@ -128,7 +128,7 @@ namespace anisotropy{
             std::vector< double > kl_vector; // last unit vector perpendicular to kr_vector and ku_vector
 
             std::vector< double > u1_vector; // unit vector defining axis for uniaxial anisotropy
-            std::vector< double > u2_vector; // unit vector defining axis for uniaxial anisotropy                        
+            std::vector< double > u2_vector; // unit vector defining axis for uniaxial anisotropy
 
             std::vector< double > kc_vector1; // first unit vector defining axis for cubic anisotropy
             std::vector< double > kc_vector2; // second unit vector defining axis for cubic anisotropy
@@ -143,7 +143,7 @@ namespace anisotropy{
       		bool random_grain_anisotropy; // flag to control random anisotropy by grain
 
             // constructor
-            mp_t ( const unsigned int max_materials = 666 ):
+            mp_t ( const unsigned int max_materials = 2000 ):
             	ku2( 0.0 ),       // set initial value of ku2 to zero
                k2r1( 0.0 ),      // set initial value of k2r1 to zero
                k2r1_odd( 0.0 ),  // set initial value of k2r1_odd to zero
@@ -191,7 +191,7 @@ namespace anisotropy{
 
                // set default axis from which rotational angle phi is measured
                kr_vector.resize( 3 ); // resize to three elements
-               
+
                kr_vector[ 0 ] = 1.0; // set direction along [1,0,0]
                kr_vector[ 1 ] = 0.0;
                kr_vector[ 2 ] = 0.0;
@@ -210,11 +210,11 @@ namespace anisotropy{
 
                u1_vector[ 0 ] = oneosqrt2 * 1.0; // set direction along [1,1,0]
                u1_vector[ 1 ] = oneosqrt2 * 1.0;
-               u1_vector[ 2 ] = 0.0;      
+               u1_vector[ 2 ] = 0.0;
 
                u2_vector[ 0 ] = oneosqrt2 * 1.0;   // set direction along [1,-1,0]
                u2_vector[ 1 ] = - oneosqrt2 * 1.0;
-               u2_vector[ 2 ] = 0.0;                             
+               u2_vector[ 2 ] = 0.0;
 
                // set default uniaxial and cubic directions
                kc_vector1.resize( 3 ); // resize to three elements
@@ -249,7 +249,7 @@ namespace anisotropy{
 
       extern bool initialised; // check module has been initialised
 
-      // Flags for tesseral harmonic (or real spherical harmonic) expansion anisotorpy terms 
+      // Flags for tesseral harmonic (or real spherical harmonic) expansion anisotorpy terms
       extern bool enable_uniaxial_second_order;    // Flag to enable calculation of second order uniaxial anisotropy
       extern bool enable_rotational_2_1_order;     // Flag to enable calculation of second order theta first order phi anisotropy
       extern bool enable_rotational_2_1_order_odd; // Flag to enable calculation of second order theta first order phi odd anisotropy
@@ -387,7 +387,7 @@ namespace anisotropy{
       //-------------------------------------------------------------------------
       // internal function declarations
       //-------------------------------------------------------------------------
-      
+
       // Fields
       void uniaxial_second_order_fields(  std::vector<double>& spin_array_x,
                                           std::vector<double>& spin_array_y,
@@ -708,7 +708,7 @@ namespace anisotropy{
                                         std::vector<double>& field_array_y,
                                         std::vector<double>& field_array_z,
                                         const int start_index,
-                                        const int end_index);                                        
+                                        const int end_index);
 
       void cubic_fourth_order_fields(std::vector<double>& spin_array_x,
                                      std::vector<double>& spin_array_y,
@@ -953,7 +953,7 @@ namespace anisotropy{
                                           const int mat,
                                           const double sx,
                                           const double sy,
-                                          const double sz);                                          
+                                          const double sz);
 
       double cubic_fourth_order_energy(const int atom,
                                        const int mat,
